@@ -18,8 +18,7 @@ User-types
         - Make the connection between the writer and the publisher
     
     
-   Publisher
-   
+     Publisher
         - Have an account as a publisher
         - Accept or Refuse writer's book
         - Analyze writer's book before publishing
@@ -27,8 +26,7 @@ User-types
         - Publish the book and set the price
         
         
-   Reader/Buyer
-   
+     Reader/Buyer
         - Have an account as a Reader/Buyer
         - Select book to read
         - Purchase book
