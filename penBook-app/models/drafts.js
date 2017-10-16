@@ -4,6 +4,10 @@ module.exports = (sequelize, DataTypes) => {
 		draftText: DataTypes.STRING
 		});
 
+	Drafts.associate = (models) => {
+		models.Drafts.belongsTo(models.Chapters);
+	}
+
 
 	return Drafts;
 }; 
