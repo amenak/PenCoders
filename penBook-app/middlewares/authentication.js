@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt-nodejs');
+//Anthentication middleware for Node.js
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
@@ -43,7 +44,7 @@ passport.deserializeUser((id, done) => {
 });
 
 passport.redirectIfLoggedIn = (route) =>
-  (req, res, next) => (req.user ? res.redirect(route) : next());
+  (req, res, next) => {(req.user ? res.redirect(route) : next()); console.log("$$$$$$$$$$$$$$$$$$" + req.user);}
 
 passport.redirectIfNotLoggedIn = (route) =>
   (req, res, next) => (req.user ? next() : res.redirect(route));

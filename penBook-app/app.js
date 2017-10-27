@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const models = require('./models');
+const viewHelpers = require('./middlewares/viewHelpers');
 
 const PORT = process.env.PORT || 8000;
 
@@ -8,6 +9,8 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(viewHelpers.register());
+
 
 const expressSession = require('express-session');
 const passport = require('./middlewares/authentication');

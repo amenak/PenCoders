@@ -4,10 +4,14 @@ const passport = require('../middlewares/authentication');
 
 const router = express.Router();
 
-router.get('/home', 
-  passport.redirectIfNotLoggedIn('/sign-up'),
+router.get('/', 
   (req, res) => {
   res.render('home');
+});
+
+router.get('/profile', 
+(req, res) => {
+res.render('profile');
 });
 
 router.get('/sign-up', (req, res) => {
@@ -25,7 +29,7 @@ router.post('/sign-up',
   })
     .then((user) => {
       req.login(user, () => {
-        res.redirect('/home');
+        res.redirect('/profile');
       })
     })
 });
@@ -36,14 +40,14 @@ router.get('/logout', (req,res) => {
 });
 
 router.get('/login', 
-  passport.redirectIfLoggedIn('/home'),
+  passport.redirectIfLoggedIn('/profile'),
   (req, res) => {
   res.render('login');
 })
 
 router.post('/login', (req, res) => {
    passport.authenticate('local', {
-      successRedirect: '/home',
+      successRedirect: '/profile',
       failureRedirect: '/login',
     })(req, res);
 });
