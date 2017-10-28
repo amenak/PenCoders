@@ -10,6 +10,10 @@ module.exports = (sequelize, Datatypes) => {
 		password_hash : Datatypes.STRING
 	});
 
+  Users.associate = (models) => {
+    models.Users.hasMany(models.Drafts);
+  }
+
 	Users.beforeCreate((user) =>
     	new sequelize.Promise((resolve) => {
       		bcrypt.hash(user.password_hash, null, null, (err, hashedPassword) => {
