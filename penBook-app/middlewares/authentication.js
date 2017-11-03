@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt-nodejs');
+//Anthentication middleware for Node.js
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
@@ -8,10 +9,7 @@ function passwordsMatch(passwordSubmitted, storedPassword) {
   return bcrypt.compareSync(passwordSubmitted, storedPassword);
 }
 
-passport.use(new LocalStrategy({
-    usernameField: 'email',
-  },
-  (email, password, done) => {
+passport.use(new LocalStrategy({ usernameField: 'email',}, (email, password, done) => {
     Users.findOne({
       where: { email },
     }).then((user) => {

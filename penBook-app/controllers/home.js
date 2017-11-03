@@ -4,19 +4,19 @@ const passport = require('../middlewares/authentication');
 
 const router = express.Router();
 
-router.get('/home', 
-  passport.redirectIfNotLoggedIn('/sign-up'),
-  (req, res) => {
+router.get('/', (req, res) => {
   res.render('home');
+});
+
+router.get('/profile', (req, res) => {
+  res.render('profile');
 });
 
 router.get('/sign-up', (req, res) => {
   res.render('sign-up');
 });
 
-router.post('/sign-up',
-  passport.redirectIfLoggedIn('/profile'), 
-  (req, res) => {
+router.post('/sign-up', passport.redirectIfLoggedIn('/profile'), (req, res) => {
   models.Users.create({
     firstName : req.body.firstName,
     lastName : req.body.lastName,
@@ -25,7 +25,7 @@ router.post('/sign-up',
   })
     .then((user) => {
       req.login(user, () => {
-        res.redirect('/home');
+        res.redirect('/profile');
       })
     })
 });
@@ -35,15 +35,18 @@ router.get('/logout', (req,res) => {
   res.redirect('/login');
 });
 
-router.get('/login', 
-  passport.redirectIfLoggedIn('/home'),
-  (req, res) => {
+router.post('/logout', (req,res) => {
+  req.logout();
+  res.redirect('/');
+});
+
+router.get('/login', passport.redirectIfLoggedIn('/profile'), (req, res) => {
   res.render('login');
 })
 
 router.post('/login', (req, res) => {
    passport.authenticate('local', {
-      successRedirect: '/home',
+      successRedirect: '/profile',
       failureRedirect: '/login',
     })(req, res);
 });
