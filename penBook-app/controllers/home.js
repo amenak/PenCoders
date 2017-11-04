@@ -41,13 +41,15 @@ router.post('/logout', (req,res) => {
 });
 
 router.get('/login', passport.redirectIfLoggedIn('/profile'), (req, res) => {
-  res.render('login');
+  res.render('login', { error: req.flash('error')});
 })
 
 router.post('/login', (req, res) => {
    passport.authenticate('local', {
       successRedirect: '/profile',
       failureRedirect: '/login',
+      failureFlash: true,
+      successFlash: true,
     })(req, res);
 });
 

@@ -23,6 +23,7 @@ const PORT = process.env.PORT || 8000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressSession({ secret: 'keyboard dog', resave: false, saveUninitialized: true}));
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(viewHelpers.register());
