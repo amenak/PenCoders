@@ -1,7 +1,27 @@
 module.exports = (sequelize, DataTypes) => {
 	const Drafts = sequelize.define('Drafts', {
-		title: DataTypes.STRING,
-		draftText: DataTypes.STRING
+		slug: {
+			type: DataTypes.STRING,
+			unique: 'compositeIndex',
+			allowNull: false,
+			validate: {
+				notEmpty: true,
+			},
+		},
+		title: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			validate: {
+				notEmpty: true,
+			},
+		},
+		draftText: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			validate: {
+				notEmpty: true,
+			},
+		},
 		});
 
 	
