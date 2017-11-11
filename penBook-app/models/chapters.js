@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-	const Drafts = sequelize.define('Drafts', {
+	const Chapters = sequelize.define('Chapters', {
 		slug: {
 			type: DataTypes.STRING,
 			unique: 'compositeIndex',
@@ -18,21 +18,20 @@ module.exports = (sequelize, DataTypes) => {
 		genre: {
 			type: DataTypes.STRING,
 		},
-		draftText: {
+		text: {
 			type: DataTypes.STRING,
 			allowNull: false,
 			validate: {
 				notEmpty: true,
 			},
 		},
+
+		});
 	});
 
-	
-	Drafts.associate = (models) => {
-		models.Drafts.belongsTo(models.Users);
+	Chapters.associate = (models) => {
+		models.Chapters.belongsTo(models.Books);
 	}
-	
 
-
-	return Drafts;
-}; 
+	return Chapters;
+}

@@ -16,11 +16,11 @@ passport.use(new LocalStrategy({
       where: { email },
     }).then((user) => {
       if(!user) {
-        return done(null, false, { message: 'Incorrect email.' });
+        return done(null, false, { message: 'Incorrect email or password.' });
       }
 
       if (passwordsMatch(password, user.password_hash) === false) {
-        return done(null, false, { message: 'Incorrect password.' });
+        return done(null, false, { message: 'Incorrect email or password.' });
       }
 
       return done(null, user, { message: 'Successfully Logged In!' });
