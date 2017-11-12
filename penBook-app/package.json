@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon -L app.js",
-    "test": "jest"
+    "test": "export NODE_ENV=test && mocha penBook-app/*.test.js"
   },
   "author": "PenCoders",
   "license": "ISC",
@@ -17,14 +17,18 @@
     "body-parser": "^1.18.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
+    "expect": "^21.2.1",
     "express": "^4.16.1",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
+    "mocha": "^4.0.1",
     "nodemon": "^1.12.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pg": "^7.3.0",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.13.3"
+    "sequelize": "^4.13.3",
+    "speakingurl": "^14.0.1",
+    "supertest": "^3.0.0"
   }
 }

@@ -53,3 +53,5 @@ models.sequelize.sync({force: false})
       console.log(`Server is up and running on port: ${PORT}`)
     });
   });
+
+  module.exports = {app};
