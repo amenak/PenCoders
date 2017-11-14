@@ -50,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
 	});
 
   Users.associate = (models) => {
-    models.Users.hasMany(models.Drafts);
+    models.Users.hasMany(models.DraftChapters);
     models.Users.hasMany(models.Books);
   }
 

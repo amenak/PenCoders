@@ -26,7 +26,6 @@ module.exports = (sequelize, DataTypes) => {
 			},
 		},
 
-		});
 	});
 
 	Chapters.associate = (models) => {

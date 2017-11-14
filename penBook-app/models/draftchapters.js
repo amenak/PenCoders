@@ -25,15 +25,14 @@ module.exports = (sequelize, DataTypes) => {
 				notEmpty: true,
 			},
 		},
-
 		});
 
 	
-	Drafts.associate = (models) => {
-		models.Drafts.belongsTo(models.Users);
+	DraftChapters.associate = (models) => {
+		models.DraftChapters.belongsTo(models.Users);
 	}
 	
 
 
-	return Drafts;
+	return DraftChapters;
 }; 

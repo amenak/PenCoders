@@ -3,11 +3,10 @@ const passport = require('../middlewares/authentication');
 
 const router = express.Router();
 
-router.get('/',
+router.get('/', 
   passport.redirectIfNotLoggedIn('/login'),
   (req, res) => {
-    res.render('home', {user: req.user});
-  });
-
+  res.render('profile', {user:req.user});
+});
 
 module.exports = router;
