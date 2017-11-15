@@ -16,22 +16,37 @@ router.get('/profile', (req, res) => {
 });
 
 router.get('/sign-up', (req, res) => {
-  res.render('sign-up');
+  res.render('sign-up', { error: req.flash('error')});
 });
 
 router.post('/sign-up', passport.redirectIfLoggedIn('/profile'), (req, res) => {
-  models.User.create({
-    firstName : req.body.firstName,
-    lastName : req.body.lastName,
-    username: req.body.username,
-    email: req.body.email,
-    password_hash: req.body.password
-  })
-    .then((user) => {
-      req.login(user, () => {
-        res.redirect('/profile');
-      })
+  req.checkBody('firstName', 'firstName is required').notEmpty();
+  req.checkBody('email', 'Invalid email').isEmail();
+  req.checkBody('lastName', 'lastName is required').notEmpty();
+  req.checkBody('username', 'username is required').notEmpty();
+  req.checkBody('email', 'email is required').notEmpty();
+  req.checkBody('password', 'password is required').notEmpty();
+
+  let errors = req.validationErrors();
+
+  if(errors){
+    res.render('sign-up', {errors: errors})
+  }else{
+    models.User.create({
+      firstName : req.body.firstName,
+      lastName : req.body.lastName,
+      username: req.body.username,
+      email: req.body.email,
+      password_hash: req.body.password
     })
+      .then((user) => {
+        req.login(user, () => {
+          res.redirect('/profile');
+        })
+      }).catch(() => {
+          res.render('sign-up');
+      });
+  }
 });
 
 router.get('/logout', (req,res) => {
@@ -134,7 +149,7 @@ router.put('/posts/:username/:slug', passport.redirectIfNotLoggedIn('/login'), r
   }).then(([numRows, rows]) => {
     const post = rows[0];
     res.redirect(`/posts/${req.user.username}/${post.slug}`);
-  });  
+  }); 
 });
 
 router.delete('/posts/:username/:slug', passport.redirectIfNotLoggedIn('/login'), redirect.ifNotAuthorized('/posts'), (req, res) => {
@@ -149,7 +164,7 @@ router.delete('/posts/:username/:slug', passport.redirectIfNotLoggedIn('/login')
       },
     }],
   }).then(() => {
-    res.redirect('/posts')
+    res.redirect('/posts');
   });
 });
 

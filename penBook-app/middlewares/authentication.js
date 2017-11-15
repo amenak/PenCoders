@@ -14,7 +14,7 @@ passport.use(new LocalStrategy({ usernameField: 'email',}, (email, password, don
       where: { email },
     }).then((user) => {
       if(!user) {
-        return done(null, false, { message: 'Incorrect email.' });
+        return done(null, false, { message: 'Invalid email.' });
       }
 
       if (passwordsMatch(password, user.password_hash) === false) {

@@ -1,29 +1,55 @@
-//body parsing middleware
-const bodyParser = require('body-parser');
 //web framework for node.js
 const express = require('express');
-//store data that you want to access to acrose requests, so you can read data between different routes
-const expressSession = require('express-session');
+//body parsing middleware
+const bodyParser = require('body-parser');
 //use handlebars as the view
 const exphbs = require('express-handlebars');
-
+const cookieParser = require('cookie-parser');
 const models = require('./models');
 const viewHelpers = require('./middlewares/viewHelpers');
 const passport = require('./middlewares/authentication');
 const controllers = require('./controllers');
-
+//store data that you want to access to acrose requests, so you can read data between different routes
+const expressSession = require('express-session');
 const flash = require('connect-flash');
+const expressValidator = require('express-validator');
 
 
+//Init App
 const app = express();
 //user port 3000 unless there exists a preconfigured port
 const PORT = process.env.PORT || 8000;
-//app.use(cookieParser());
+app.use(cookieParser());
 //use middlewares
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+//express validator middleware
+app.use(expressValidator({
+  errorFormatter: function(param, msg, value) {
+    var namespace = param.split('.')
+    , root = namespace.shift()
+    , formParam = root;
+
+    while(namespace.length) {
+      formParam += '[' + namespace.shift() + ']';
+    }
+    return {
+      param : formParam,
+      msg: msg,
+      value: value
+    };
+  }
+}));
+
+//express session middleware
 app.use(expressSession({ secret: 'keyboard dog', resave: false, saveUninitialized: true}));
+//express messages middleware
 app.use(flash());
+app.use((req, res, next) => {
+  res.locals.messages = require('express-messages')(req, res);
+  next();
+});
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(viewHelpers.register());

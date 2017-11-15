@@ -1,4 +1,4 @@
-<div class="container">
+<div id="sign-up" class="container">
     	<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="panel panel-sign-up">
@@ -10,6 +10,9 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
+								{{#each errors}}
+        					<div class="alert alert-danger">{{this.msg}}</div>
+     						{{/each}}
 								<form id="register-form" action="/sign-up" method="post" role="form" style="display: block;">
 									<div class="form-group">
 										<input type="text" name="firstName" id="firstName" tabindex="1" class="form-control" placeholder="First Name" value="">
