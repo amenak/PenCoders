@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/profile', (req, res) => {
-  res.render('profile');
+  res.render('profile', {user: req.user});
 });
 
 router.get('/sign-up', (req, res) => {

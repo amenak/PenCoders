@@ -13,10 +13,12 @@ const controllers = require('./controllers');
 const expressSession = require('express-session');
 const flash = require('connect-flash');
 const expressValidator = require('express-validator');
+const methodOverride = require('method-override');
 
 
 //Init App
 const app = express();
+app.use(methodOverride('_method'));
 //user port 3000 unless there exists a preconfigured port
 const PORT = process.env.PORT || 8000;
 app.use(cookieParser());
