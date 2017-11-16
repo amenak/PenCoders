@@ -23,8 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: true,
       },
     },
-    /*
-    category: {
+    catagory: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -38,7 +37,13 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: true,
       },
     },
-    */
+    language: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
   });
 
   Post.associate = (models) => {

@@ -90,6 +90,9 @@ router.post('/posts', passport.redirectIfNotLoggedIn('/login'), (req, res) => {
     slug: getSlug(req.body.title.toLowerCase()),
     title: req.body.title.toLowerCase(),
     body: req.body.body,
+    catagory: req.body.catagory,
+    genre: req.body.genre,
+    language: req.body.language,
   }).then((post) => {
     res.redirect(`/posts/${req.user.username}/${post.slug}`);
   }).catch(() => {
