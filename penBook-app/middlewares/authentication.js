@@ -35,7 +35,6 @@ passport.deserializeUser((id, done) => {
     if (!user) {
       return done(null, false);
     }
-
     return done(null, user);
   });
 });
