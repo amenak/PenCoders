@@ -1,3 +1,4 @@
+
 const fs        = require('fs');
 const path      = require('path');
 const Sequelize = require('sequelize');
@@ -10,6 +11,7 @@ function getSequelize(){
 if (config.use_env_variable) {
   return new Sequelize(process.env[config.use_env_variable]);
 } 
+
   return new Sequelize(config.database, config.username, config.password, config);
 }
 
@@ -17,6 +19,7 @@ const sequelize = getSequelize();
 
 fs
   .readdirSync(__dirname)
+
   .filter(file => {
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
@@ -25,6 +28,8 @@ fs
     db[model.name] = model;
   });
 
+//The Object.keys() method returns an array of a given object's own properties, in the same order as 
+//that provided by a for...in loop
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
@@ -34,4 +39,4 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-module.exports = db;
+module.exports = db;  

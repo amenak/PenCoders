@@ -1,4 +1,5 @@
 const express = require('express');
+const redirect = require('../middlewares/redirect');
 
 const router = express.Router();
 
