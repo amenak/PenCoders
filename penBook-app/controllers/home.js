@@ -1,7 +1,6 @@
 const express = require('express');
 const passport = require('../middlewares/authentication');
 const redirect = require('../middlewares/redirect');
-const getSlug = require('speakingurl');
 
 const router = express.Router();
 
