@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
 	const DraftChapters = sequelize.define('DraftChapters', {
 		slug: {
 			type: DataTypes.STRING,
-			unique: 'compositeIndex',
+			unique: true,
 			allowNull: false,
 			validate: {
 				notEmpty: true,

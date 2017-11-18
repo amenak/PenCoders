@@ -1,4 +1,5 @@
 const express = require('express');
+const models = require('../models');
 const passport = require('../middlewares/authentication');
 const redirect = require('../middlewares/redirect');
 const getSlug = require('speakingurl');
@@ -7,7 +8,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   models.DraftChapters.findAll({
-    include: [{model: models.Userss}]
+    include: [{model: models.Users}]
   }).then((allDraftChapters) => {
     res.render('drafts', {allDraftChapters});
   })
