@@ -1,10 +1,7 @@
-
 const bcrypt = require('bcrypt-nodejs');
 
-
 module.exports = (sequelize, DataTypes) => {
-	const Users = sequelize.define('Users', {
-
+	const User = sequelize.define('user', {
 		firstName: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -12,15 +9,14 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: true,
       },
     },
-		lastName : {
-
+		lastName: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: true,
       },
     },
-    username : {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
@@ -29,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         isAlphanumeric: true,
       },
     },
-		email : {
+		email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
@@ -38,23 +34,16 @@ module.exports = (sequelize, DataTypes) => {
         isEmail: true,
       },
     },
-		password_hash : {
-      type: DataTypes.STRING,
-    },
-    password: {
-      type: DataTypes.VIRTUAL,
-      validate: {
-        notEmpty: true,
-      },
-    },
+		password_hash: {
+			type: DataTypes.STRING,
+		},
 	});
 
-  Users.associate = (models) => {
-    models.Users.hasMany(models.DraftChapters);
-    models.Users.hasMany(models.Books);
-  }
+	User.associate = (models) => {
+		models.User.hasMany(models.Post);
+	}
 
-	Users.beforeCreate((user) =>
+	User.beforeCreate((user) =>
     	new sequelize.Promise((resolve) => {
       		bcrypt.hash(user.password_hash, null, null, (err, hashedPassword) => {
         		resolve(hashedPassword);
@@ -65,5 +54,5 @@ module.exports = (sequelize, DataTypes) => {
     	})
   );
 
-	return Users;
-}
+	return User;
+};
