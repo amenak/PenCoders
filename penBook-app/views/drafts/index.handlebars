@@ -3,19 +3,19 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <h1>All Books</h1>
         {{#if cur_user}}
-        <div class="create-post">
-          <a class="btn btn-default" href="/posts/new">Write A Book</a>
+        <div class="create-draft">
+          <a class="btn btn-default" href="/drafts/new">Write A Book</a>
         </div>
         {{/if}}
         {{#each allPosts}}
-          <div class="post-preview">
-              <a href="/posts/{{this.user.username}}/{{this.slug}}">
-                  <h2 class="post-title">
+          <div class="draft-preview">
+              <a href="/drafts/{{this.user.username}}/{{this.slug}}">
+                  <h2 class="draft-title">
                       {{this.title}} 
                   </h2>
                    <span class="subheading">{{this.genre}}</span>
               </a>
-              <p class="post-meta">Posted by <a href="/User/{{this.user.username}}">{{this.user.username}}</a></p>
+              <p class="draft-meta">Posted by <a href="/User/{{this.user.username}}">{{this.user.username}}</a></p>
           </div>
           <hr>
         {{/each}}

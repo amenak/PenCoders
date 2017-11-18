@@ -9,4 +9,5 @@ router.get('/',
   res.render('profile', {user:req.user});
 });
 
+
 module.exports = router;

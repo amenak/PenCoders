@@ -1,27 +1,34 @@
+const express = require('express');
+const passport = require('../middlewares/authentication');
+const redirect = require('../middlewares/redirect');
+const getSlug = require('speakingurl');
+
+const router = express.Router();
+
 router.get('/', (req, res) => {
   models.DraftChapters.findAll({
-    include: [{model: models.User}]
-  }).then((allPosts) => {
-    res.render('posts', {allPosts});
+    include: [{model: models.Userss}]
+  }).then((allDraftChapters) => {
+    res.render('drafts', {allDraftChapters});
   })
 });
 
 router.get('/new', passport.redirectIfNotLoggedIn('/login'), (req, res) => {
-  res.render('posts/new');
+  res.render('drafts/new');
 });
 
 router.post('/', passport.redirectIfNotLoggedIn('/login'), (req, res) => {
-  req.user.createPost({
+  req.user.createDraftChapter({
     slug: getSlug(req.body.title.toLowerCase()),
     title: req.body.title.toLowerCase(),
     body: req.body.body,
     catagory: req.body.catagory,
     genre: req.body.genre,
     language: req.body.language,
-  }).then((post) => {
-    res.redirect(`/posts/${req.user.username}/${post.slug}`);
+  }).then((draft) => {
+    res.redirect(`/drafts/${req.user.username}/${draft.slug}`);
   }).catch(() => {
-    res.render('posts/new');
+    res.render('drafts/new');
   });
 });
 
@@ -31,13 +38,13 @@ router.get('/:username/:slug', (req, res) => {
       slug: req.params.slug,
     },
     include: [{
-      model: models.User,
+      model: models.Users,
       where: {
         username: req.params.username,
       },
     }],
-  }).then((post) => {
-    (post ? res.render('posts/single', { post, user: post.user }) : res.redirect('/posts'));
+  }).then((draft) => {
+    (draft ? res.render('drafts/single', { draft, user: draft.user }) : res.redirect('/drafts'));
   });
 });
 
@@ -47,17 +54,17 @@ router.get('/:username/:slug/edit', passport.redirectIfNotLoggedIn('/login'), (r
       slug: req.params.slug,
     },
     include: [{
-      model: models.User,
+      model: models.Users,
       where: {
         username: req.params.username,
       },
     }],
-  }).then((post) =>
-    (post ? res.render('posts/edit', { post }) : res.redirect('/posts'))
+  }).then((draft) =>
+    (draft ? res.render('drafts/edit', { draft }) : res.redirect('/drafts'))
   );
 });
 
-router.put('/:username/:slug', passport.redirectIfNotLoggedIn('/login'), redirect.ifNotAuthorized('/posts'), (req, res) => {
+router.put('/:username/:slug', passport.redirectIfNotLoggedIn('/login'), redirect.ifNotAuthorized('/drafts'), (req, res) => {
   models.DraftChapters.update({
     title: req.body.title.toLowerCase(),
     slug: getSlug(req.body.title.toLowerCase()),
@@ -68,30 +75,32 @@ router.put('/:username/:slug', passport.redirectIfNotLoggedIn('/login'), redirec
       slug: req.params.slug,
     },
     include: [{
-      model: models.User,
+      model: models.Users,
       where: {
         username: req.params.username,
       },
     }],
     returning: true,
   }).then(([numRows, rows]) => {
-    const post = rows[0];
-    res.redirect(`/posts/${req.user.username}/${post.slug}`);
+    const draft = rows[0];
+    res.redirect(`/drafts/${req.user.username}/${draft.slug}`);
   }); 
 });
 
-router.delete('/:username/:slug', passport.redirectIfNotLoggedIn('/login'), redirect.ifNotAuthorized('/posts'), (req, res) => {
+router.delete('/:username/:slug', passport.redirectIfNotLoggedIn('/login'), redirect.ifNotAuthorized('/drafts'), (req, res) => {
   models.DraftChapters.destroy({
     where: {
       slug: req.params.slug,
     },
     include: [{
-      model: models.User,
+      model: models.Users,
       where: {
         username: req.params.username,
       },
     }],
   }).then(() => {
-    res.redirect('/posts');
+    res.redirect('/drafts');
   });
 });
+
+module.exports = router;

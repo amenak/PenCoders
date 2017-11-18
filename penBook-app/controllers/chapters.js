@@ -1,3 +1,6 @@
+const passport = require('../middlewares/authentication');
+const redirect = require('../middlewares/redirect');
+const router = express.Router();
 
 router.post('/:username/books', 
 	redirectIfNotLoggedIn('/login'),
@@ -8,7 +11,7 @@ router.post('/:username/books',
 					id: req.draftChapter.id,
 				},
 				include: [{
-					model: models.User,
+					model: models.Users,
 					where: {
 						username: req.params.username,
 							},
@@ -27,3 +30,5 @@ router.post('/:username/books',
 						});
 				});
 });
+
+module.exports = router;

@@ -7,13 +7,9 @@ const router = express.Router();
 
 router.get('/', passport.redirectIfLoggedIn('/profile'),
  (req, res) => {
-  res.render('sign-up');
-});
-
-
-router.get('/', (req, res) => {
   res.render('sign-up', { error: req.flash('error')});
 });
+
 
 router.post('/', passport.redirectIfLoggedIn('/profile'), (req, res) => {
   req.checkBody('firstName', 'firstName is required').notEmpty();
@@ -28,7 +24,7 @@ router.post('/', passport.redirectIfLoggedIn('/profile'), (req, res) => {
   if(errors){
     res.render('sign-up', {errors: errors})
   }else{
-    models.User.create({
+    models.Users.create({
       firstName : req.body.firstName,
       lastName : req.body.lastName,
       username: req.body.username,
@@ -37,7 +33,7 @@ router.post('/', passport.redirectIfLoggedIn('/profile'), (req, res) => {
     })
       .then((user) => {
         req.login(user, () => {
-          res.redirect('/home');
+          res.redirect('/');
         })
       }).catch(() => {
           res.render('sign-up');
