@@ -15,13 +15,13 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <p>{{draft.text}}</p>
       <div class="create-draft">
           <a class="btn btn-default" href="/drafts/{{user.username}}/{{draft.slug}}/edit">Edit</a> 
       </div>
-      <p>{{draft.body}}</p>
       <ul class="pager">
           <li class="next">
-            <a href="/drafts">All Books &larr;</a>
+            <a href="/drafts">All Drafts &larr;</a>
           </li>
       </ul>
     </div>

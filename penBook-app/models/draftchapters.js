@@ -17,6 +17,10 @@ module.exports = (sequelize, DataTypes) => {
 		},
 		genre: {
 			type: DataTypes.STRING,
+			allowNull: false,
+			validate: {
+				notEmpty: true,
+			},
 		},
 		text: {
 			type: DataTypes.STRING,

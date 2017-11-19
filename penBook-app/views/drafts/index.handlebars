@@ -9,13 +9,13 @@
         {{/if}}
         {{#each allDraftChapters}}
           <div class="draft-preview">
-              <a href="/drafts/{{this.user.username}}/{{this.slug}}">
+              <a href="/drafts/{{this.User.username}}/{{this.slug}}">
                   <h2 class="draft-title">
                       {{this.title}} 
                   </h2>
                    <span class="subheading">{{this.genre}}</span>
               </a>
-              <p class="draft-meta">Posted by <a href="/User/{{this.user.username}}">{{this.user.username}}</a></p>
+              <p class="draft-meta">Posted by <a href="/User/{{this.User.username}}">{{this.User.username}}</a></p>
           </div>
           <hr>
         {{/each}}
