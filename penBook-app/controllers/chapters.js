@@ -1,5 +1,6 @@
 const passport = require('../middlewares/authentication');
 const redirect = require('../middlewares/redirect');
+const models = require('../models');
 const router = express.Router();
 
 router.post('/:username/books', 
