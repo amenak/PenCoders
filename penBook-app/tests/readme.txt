@@ -1,1 +1,0 @@
-Type 'npm test' on command line to run the test.
