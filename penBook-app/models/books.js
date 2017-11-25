@@ -1,5 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
 	const Books = sequelize.define ('Books', {
+		slug: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			validate: {
+				notEmpty: true,
+			},
+		},
+
 		title: {
 			type: DataTypes.STRING,
 			allowNull: false,
@@ -7,6 +15,19 @@ module.exports = (sequelize, DataTypes) => {
 				notEmpty: true,
 			},
 		},
+
+		genre: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			validate: {
+				notEmpty: true,
+			},
+		},
+
+		description: {
+			type: DataTypes.STRING,
+		},
+
 	});
 
 	Books.associate = (models) => {

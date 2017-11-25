@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
 	const Chapters = sequelize.define('Chapters', {
 		slug: {
 			type: DataTypes.STRING,
-			unique: 'compositeIndex',
+			unique: true,
 			allowNull: false,
 			validate: {
 				notEmpty: true,

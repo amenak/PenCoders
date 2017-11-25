@@ -1,0 +1,52 @@
+<header class="intro-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-heading">
+          <h1>{{book.title}}</h1>
+          <hr class="small">
+          <span class="subheading">By: {{user.username}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <p> Genre: <em>{{book.genre}}</em></p>
+      <p> Description: <em>{{book.description}}</em></p>
+        {{#if cur_user }}
+          <div class="create-book">
+            <a class="btn btn-default" href="/books/{{user.username}}/{{book.slug}}/edit">Edit</a> 
+          </div>
+          <br/>
+          <div class="add-chapters">
+            <a class="btn btn-default" href="/drafts">Add Chapters </a>
+          </div>
+      {{/if}}
+      {{#if chapters}}
+       {{#each chapters}}
+          <div class="chapter-preview">
+              <a href="/books/{{this.user.username}}/{{this.book.slug}}/{{this.slug}}">
+                  <h2 class="chapter-title">
+                     Chapter {{@index}}: {{this.title}} 
+                  </h2>
+              </a>
+          </div>
+          <hr>
+        {{/each}}
+      {{else}}
+        <div class="chapter-alert">
+          <p><em>Chapter One is coming soon!!!</em></p>
+        </div>
+      {{/if}}
+      <ul class="pager">
+          <li class="next">
+            <a href="/books">All books &larr;</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<header class="intro-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-heading">
+          <h1>{{chapter.title}}</h1>
+          <hr class="small">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <p> <em>{{chapter.text}}</em></p>
+      <ul class="pager">
+          <li class="next">
+            <a href="/books/{{user.username}}/{{book.slug}}">All Chapters &larr;</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
