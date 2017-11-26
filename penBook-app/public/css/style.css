@@ -1,7 +1,13 @@
 
 #login-nav input { margin-bottom: 15px; }
+#myNavbar {
+	background-color: #DFDCE3;
+}
+
 .navbar-brand {
 	font-weight:bold;
-	font-size:18px;
+	font-size:20px;
+	color: white;
+
 }
 
