@@ -3,25 +3,27 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-heading">
-          <h1>{{post.title}}</h1>
-          <hr class="small">
+          <h1>{{book.title}}</h1>
           <span class="subheading">By: {{user.username}}</span>
+          <hr class="small">
+          <p>{{book.description}}</p>
         </div>
       </div>
-    </div>
+    </div>    
   </div>
 </header>
 
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <div class="create-post">
-          <a class="btn btn-default" href="/posts/{{user.username}}/{{post.slug}}/edit">Edit</a> 
+      <div class="create-post text-center">
+          <a class="btn btn-default" href="/books/{{user.username}}/{{book.slug}}/edit">Edit</a> 
+          <a class="btn btn-default" href="/draft">Start Writing!</a> 
       </div>
       <p>{{post.body}}</p>
       <ul class="pager">
           <li class="next">
-            <a href="/posts">All Books &larr;</a>
+            <a href="/books">All Books &larr;</a>
           </li>
       </ul>
     </div>

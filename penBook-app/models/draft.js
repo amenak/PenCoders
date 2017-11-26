@@ -23,31 +23,15 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: true,
       },
     },
-    catagory: {
-      type: DataTypes.STRING,
+    isPublished: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
       allowNull: false,
-      validate: {
-        notEmpty: true,
-      },
-    },
-    genre: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-      },
-    },
-    language: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-      },
     },
   });
 
   Draft.associate = (models) => {
-    models.Draft.belongsTo(models.User);
+    models.Draft.belongsTo(models.Book);
   }
 
   return Draft;

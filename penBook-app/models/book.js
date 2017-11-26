@@ -16,6 +16,13 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: true,
       },
     },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
     catagory: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -41,6 +48,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Book.associate = (models) => {
     models.Book.belongsTo(models.User);
+    models.Book.hasMany(models.Draft);
   }
 
   return Book;

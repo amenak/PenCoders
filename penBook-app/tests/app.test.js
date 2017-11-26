@@ -60,13 +60,13 @@ describe('Post /users', () => {
   });
 });
 
-describe('Post /posts', () => {
+describe('Post /books', () => {
   it('should create a post', (done) => {
     var title = "hello";
     var body = "world";
 
     request(app)
-      .post('/posts')
+      .post('/books')
       .send({
         slug: getSlug(title.toLowerCase()),
         title: title.toLowerCase(),
