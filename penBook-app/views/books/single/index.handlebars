@@ -17,7 +17,7 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <p> Genre: <em>{{book.genre}}</em></p>
       <p> Description: <em>{{book.description}}</em></p>
-        {{#if cur_user }}
+        {{#if isAuthor }}
           <div class="create-book">
             <a class="btn btn-default" href="/books/{{user.username}}/{{book.slug}}/edit">Edit</a> 
           </div>
@@ -29,7 +29,7 @@
       {{#if chapters}}
        {{#each chapters}}
           <div class="chapter-preview">
-              <a href="/books/{{this.user.username}}/{{this.book.slug}}/{{this.slug}}">
+              <a href="/books/{{../user.username}}/{{../book.slug}}/{{this.slug}}">
                   <h2 class="chapter-title">
                      Chapter {{@index}}: {{this.title}} 
                   </h2>

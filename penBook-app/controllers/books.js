@@ -9,7 +9,8 @@ router.get('/',
 	passport.redirectIfNotLoggedIn('/login'),
 	(req, res) => {
 		models.Books.findAll({
-			include:[{model:models.Users}]
+			include:[{model:models.Users}],
+      order: [['updatedAt', 'DESC']],
 		}).then((allBooks) => {
 			res.render('books', {allBooks});
 		});
@@ -53,7 +54,9 @@ router.get('/:username/:slug',
     	model: models.Chapters,
       }],
     }).then((book) => {
-    	(book ? res.render('books/single', { book, user: book.User, chapters: book.Chapters }) : res.redirect('/books'));
+      let isAuthor = false;
+      if(req.user.username === book.User.username) isAuthor = true;
+    	(book ? res.render('books/single', { book, user: book.User, chapters: book.Chapters, isAuthor: isAuthor }) : res.redirect('/books'));
     });
 });
 

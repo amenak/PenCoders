@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <form name="publish" method="POST" action="/publish">
@@ -10,6 +10,8 @@
           	 <option value = "{{this.id}}"> {{this.title}} </option>
           	 {{/each}}
           	</select>
+            <br/>
+            <a href = "/books/new"> The book is not created yet? </a>
           </div>
         </div>
         <div class="row control-group">

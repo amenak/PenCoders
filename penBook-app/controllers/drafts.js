@@ -18,6 +18,7 @@ router.get('/', passport.redirectIfNotLoggedIn('/login'),
           username: req.user.username,
         },
       }],
+      order: [['updatedAt', 'DESC']],
     }).then((allDraftChapters) => {
       res.render('drafts', {allDraftChapters});
     })

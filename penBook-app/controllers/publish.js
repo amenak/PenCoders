@@ -43,10 +43,11 @@ router.post('/',
 				genre: draft.genre,
 				text: draft.text,
 				BookId: req.body.book,
-			});
-		}).then((chapter) => {
-			res.redirect('/books');
-			}).catch(()=>{
+			}).then((chapter) => {
+				draft.destroy();
+				res.redirect('/books');
+			})
+		}).catch(()=>{
 				res.redirect('/publish');
 			});
 });
