@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt-nodejs');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-const User = require('../models').User;
+const User = require('../models').Users;
 
 function passwordsMatch(passwordSubmitted, storedPassword) {
   return bcrypt.compareSync(passwordSubmitted, storedPassword);
@@ -14,11 +14,11 @@ passport.use(new LocalStrategy({ usernameField: 'email',}, (email, password, don
       where: { email },
     }).then((user) => {
       if(!user) {
-        return done(null, false, { message: 'Invalid email.' });
+        return done(null, false, { message: 'Incorrect email or password.' });
       }
 
       if (passwordsMatch(password, user.password_hash) === false) {
-        return done(null, false, { message: 'Incorrect password.' });
+        return done(null, false, { message: 'Incorrect email or password.' });
       }
 
       return done(null, user, { message: 'Successfully Logged In!' });
