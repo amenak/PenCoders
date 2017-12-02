@@ -11,6 +11,10 @@ router.get('/', (req, res) => {
   res.render('home');
 });
 
+router.get('/about-us', (req, res) => {
+  res.render('about-us');
+});
+
 router.get('/profile', (req, res) => {
   res.render('profile', {user: req.user});
 });
