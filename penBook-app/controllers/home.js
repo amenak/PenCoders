@@ -6,8 +6,7 @@ const router = express.Router();
 
 
 router.get('/',
-  passport.redirectIfNotLoggedIn('/login'),
-  (req, res) => {
+    (req, res) => {
     res.render('home', {user: req.user});
   });
 
