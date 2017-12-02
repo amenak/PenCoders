@@ -28,7 +28,6 @@
                       <li><a href="#">About Us</a></li>
                       <li id="book"><a href="/books">Books</a></li>
                       <li id="drafts"><a href="/drafts">Drafts</a></li>
-                      <li id="username"><a href="/profile">{{cur_user.username}}</a></li>
                   </ul>
                   <form class="navbar-form navbar-left" role="search">
                       <div class="form-group">
@@ -39,6 +38,7 @@
                   {{/if}}
                   <ul class="nav navbar-nav navbar-right">
                     {{#if cur_user}}
+                      <li id="username"><a href="/profile">{{cur_user.username}}</a></li>
                       <li id="logout"><a href="/logout">Logout</a></li>
                     {{ else }}
                       <li><a href="/sign-up">Sign Up</a></li>
