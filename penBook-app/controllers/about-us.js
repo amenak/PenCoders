@@ -5,7 +5,7 @@ const redirect = require('../middlewares/redirect');
 const router = express.Router();
 
 
-router.get('/about-us', (req, res) => {
+router.get('/', (req, res) => {
   res.render('about-us');
 });
 
