@@ -23,9 +23,11 @@
                <a class="navbar-brand" href="/">Pen Book</a>
             </div>
              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                    <li><a href="#">About Us</a></li>
+                  </ul>
                    {{#if cur_user}}
                   <ul class="nav navbar-nav">
-                      <li><a href="#">About Us</a></li>
                       <li id="book"><a href="/books">Books</a></li>
                       <li id="drafts"><a href="/drafts">Drafts</a></li>
                   </ul>
@@ -50,6 +52,30 @@
       </div>
     </div>  
 	{{{ body }}}
+
+<div id="footer" class="footer container-fluid">
+    <div class="row"> 
+      <div class="col-lg-4 col-md-4">
+        <h4>Contact Us</h4>
+        <p>customer-services@penbook.com</p>
+        <p>1-800-435-8236</p>
+        <p>Penbook.com</p>
+      </div>
+      <div class="col-lg-4 col-md-4">
+        <h4>About</h4>
+        <p>About Us</p>
+        <p>Privacy</p>
+        <p>Term&Condition</p>
+      </div>
+      <div class="col-lg-4 col-md-4">
+        <h4> Social Media </h4>
+        <p>Facebook</p>
+        <p>Twitter</p>
+
+      </div>
+    </div>
+  </div>
+</div>
 
   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

@@ -11,3 +11,20 @@
 
 }
 
+.footer 
+{
+	width: 100%;
+	margin: 0 0;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	color: black;
+	background-color: #DFDCE3;
+	background-size: 100px 100%;
+	position: static;
+	bottom: 0;
+}
+
+.footer p 
+{
+	padding: 2px;	
+}
