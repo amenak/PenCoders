@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <form name="edit-post" method="POST" action="/books/{{book.user.username}}/{{book.slug}}?_method=PUT">
+      <form name="edit-book" method="POST" action="/books/{{book.User.username}}/{{book.slug}}?_method=PUT">
         <div class="row control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <label>Title</label>
@@ -12,7 +12,7 @@
         <div class="row control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <label>Description</label>
-            <input type="text" class="form-control" name="description" value="{{book.description}}" required data-validation-required-message="Please enter a body.">
+            <textarea type="text" class="form-control" name="description" value="{{book.description}}" required data-validation-required-message="Please enter a text."></textarea>
             <p class="help-block text-danger"></p>
           </div>
         </div>
@@ -22,7 +22,7 @@
               <button type="submit" class="btn btn-default">Edit</button>
           </div>
       </form>
-      <form name="delete-post" method="POST" action="/books/{{book.user.username}}/{{book.slug}}?_method=DELETE">
+      <form name="delete-book" method="POST" action="/books/{{book.User.username}}/{{book.slug}}?_method=DELETE">
           <div class="form-group col-xs-6 text-left">
             <button type="submit" class="btn btn-default">Delete</button>
           </div>

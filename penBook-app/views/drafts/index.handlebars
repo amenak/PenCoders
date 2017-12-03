@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <h1>All Drafts</h1>
+        {{#if cur_user}}
+        <div class="create-draft">
+          <a class="btn btn-default" href="/drafts/new">Create a new draft</a>
+        </div>
+        {{/if}}
+        {{#each allDraftChapters}}
+          <div class="draft-preview">
+              <a href="/drafts/{{this.User.username}}/{{this.slug}}">
+                  <h2 class="draft-title">
+                      {{this.title}} 
+                  </h2>
+              </a>
+              <span class="subheading">Genre: <em>{{this.genre}}</em></span>
+              <br/>
+              <span class= "subheading"><em> Last modified at: {{this.updatedAt}}</em></span>
+          </div>
+          <hr>
+        {{/each}}
+      </div>
+      <div class="publish-draft">
+          <a class="btn btn-default" href="/publish">Publish</a> 
+      </div>
+  </div>
+</div>

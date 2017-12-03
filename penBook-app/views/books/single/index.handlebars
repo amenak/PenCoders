@@ -4,26 +4,47 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-heading">
           <h1>{{book.title}}</h1>
-          <span class="subheading">By: {{user.username}}</span>
           <hr class="small">
-          <p>{{book.description}}</p>
+          <span class="subheading">By: {{user.username}}</span>
         </div>
       </div>
-    </div>    
+    </div>
   </div>
 </header>
 
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <div class="create-post text-center">
-          <a class="btn btn-default" href="/books/{{user.username}}/{{book.slug}}/edit">Edit</a> 
-          <a class="btn btn-default" href="/draft">Start Writing!</a> 
-      </div>
-      <p>{{post.body}}</p>
+      <p> Genre: <em>{{book.genre}}</em></p>
+      <p> Description: <em>{{book.description}}</em></p>
+        {{#if isAuthor }}
+          <div class="create-book">
+            <a class="btn btn-default" href="/books/{{user.username}}/{{book.slug}}/edit">Edit</a> 
+          </div>
+          <br/>
+          <div class="add-chapters">
+            <a class="btn btn-default" href="/drafts">Add Chapters </a>
+          </div>
+      {{/if}}
+      {{#if chapters}}
+       {{#each chapters}}
+          <div class="chapter-preview">
+              <a href="/books/{{../user.username}}/{{../book.slug}}/{{this.slug}}">
+                  <h2 class="chapter-title">
+                     Chapter {{@index}}: {{this.title}} 
+                  </h2>
+              </a>
+          </div>
+          <hr>
+        {{/each}}
+      {{else}}
+        <div class="chapter-alert">
+          <p><em>Chapter One is coming soon!!!</em></p>
+        </div>
+      {{/if}}
       <ul class="pager">
           <li class="next">
-            <a href="/books">All Books &larr;</a>
+            <a href="/books">All books &larr;</a>
           </li>
       </ul>
     </div>

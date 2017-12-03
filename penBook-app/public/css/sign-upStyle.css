@@ -1,0 +1,73 @@
+body{
+
+	margin: 0;
+	padding: 0;
+	background: url(/img/desk.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size: cover;
+	font-family: sans-serif;
+
+}
+
+.sign-upBox
+{
+	position: absolute;
+	top:20%;
+	left: 50%;
+	width: 350px;
+	box-sizing: border-box;
+	padding: 0px 40px;
+	background-color: #FDFDFE;
+
+
+}
+
+
+h2
+{
+	margin: 10px;
+	color: #595A5B;
+	text-align: center;
+	font-weight: bold;
+}
+
+.sign-upBox label
+{
+	margin: 0;
+	padding: 10px 0px;
+	font-weight:bold;
+	color: #2F2F2F;
+}
+
+.sign-upBox input 
+{
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.sign-upBox input[type="text"],
+.sign-upBox input[type="password"]
+{
+	height: 40px;
+}
+
+.sign-upBox button 
+{
+	margin: 20px 10px;
+	border-style: none;
+	background-color:#B0E0E6;
+	font-weight:bold;
+	font-size: 18px;
+	width: 100%;
+	height: 40px;
+	color: gray;
+}
+
+
+.sign-upBox button:hover {
+ 	border-style: outset;
+ 	border: 20px;
+ 	background-color: #00BFFF;
+}

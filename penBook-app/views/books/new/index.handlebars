@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <form name="create-post" action="/books" method="post">
+      <form name="create-book" action="/books" method="post">
         <div class="row control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <label>Title</label>
@@ -11,31 +11,16 @@
         </div>
         <div class="row control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
-            <label>Description</label>
-            <textarea type="text" class="form-control" placeholder="Description" name="description" required data-validation-required-message="Please enter a Description."></textarea>
+            <label>Genre</label>
+            <input type="text" class="form-control" placeholder="Genre" name="genre" required data-validation-required-message="Please enter a genre.">
             <p class="help-block text-danger"></p>
           </div>
         </div>
         <div class="row control-group">
-        <div class="form-group col-xs-12 floating-label-form-group controls">
-            <label>Choose a category</label>
-            <input type="radio" name="catagory" value="fiction">Fiction
-            <input type="radio" name="catagory" value="non-fiction">Non-Fiction
-            <input type="radio" name="catagory" value="fiction">Screenplay
-            <input type="radio" name="catagory" value="fiction">Poetry
-            <br>
-             <label>Choose a genre</label>
-            <select name="genre">
-              <option value="action">Action</option>
-              <option value="crime">Crime</option>
-              <option value="horror">Horror</option>
-            </select>
-            <br>
-             <label>Select Language</label>
-            <select name="language">
-              <option value="english">English</option>
-              <option value="chinese">Chinese</option>
-            </select>
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Description</label>
+            <textarea type="text" class="form-control" placeholder="Description" name="description" required data-validation-required-message="Please enter a body."></textarea>
+            <p class="help-block text-danger"></p>
           </div>
         </div>
         <br>

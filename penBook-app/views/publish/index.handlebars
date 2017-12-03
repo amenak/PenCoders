@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <form name="publish" method="POST" action="/publish">
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Book</label>
+            <select class="choose-book" name = "book" id = "book">
+          	{{#each allBooks}}
+          	 <option value = "{{this.id}}"> {{this.title}} </option>
+          	 {{/each}}
+          	</select>
+            <br/>
+            <a href = "/books/new"> The book is not created yet? </a>
+          </div>
+        </div>
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Draft</label>
+            <select class="choose-draft" name = "draft" id="draft">
+          	{{#each allDrafts}}
+          	 <option value = "{{this.id}}"> {{this.title}} </option>
+          	 {{/each}}
+          	</select>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="form-group col-xs-6 text-right">
+              <button type="submit" class="btn btn-default">Publish</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
