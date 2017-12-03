@@ -13,7 +13,7 @@ body{
 
 .sign-upBox
 {
-	position: absolute;
+	position: static;
 	top:20%;
 	left: 50%;
 	width: 350px;
