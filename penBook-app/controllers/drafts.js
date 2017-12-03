@@ -37,7 +37,6 @@ router.post('/',
       slug: getSlug(req.body.title.toLowerCase()),
       title: req.body.title.toLowerCase(),
       text: req.body.text,
-      genre: req.body.genre,
     }).then((draft) => {
       res.redirect(`/drafts/${req.user.username}/${draft.slug}`);
     }).catch(() => {

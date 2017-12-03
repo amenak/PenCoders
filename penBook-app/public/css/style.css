@@ -8,6 +8,14 @@
 	font-weight:bold;
 	font-size:20px;
 	color: white;
-
 }
+
+#resize{  
+	height:100px;  
+	padding:4px;  
+	font-size:14px;  
+	border:1px solid #dddddd;  
+	width:100%;  
+	border-radius:5px;  
+} 
 

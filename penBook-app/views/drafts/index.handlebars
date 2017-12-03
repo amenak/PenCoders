@@ -7,6 +7,7 @@
           <a class="btn btn-default" href="/drafts/new">Create a new draft</a>
         </div>
         {{/if}}
+        {{#if allDraftChapters}}
         {{#each allDraftChapters}}
           <div class="draft-preview">
               <a href="/drafts/{{this.User.username}}/{{this.slug}}">
@@ -18,11 +19,12 @@
               <br/>
               <span class= "subheading"><em> Last modified at: {{this.updatedAt}}</em></span>
           </div>
-          <hr>
+          <div class="publish-draft">
+            <a class="btn btn-default" href="/publish">Publish</a> 
+          </div>
+           <hr>
         {{/each}}
-      </div>
-      <div class="publish-draft">
-          <a class="btn btn-default" href="/publish">Publish</a> 
+        {{/if}}
       </div>
   </div>
 </div>

@@ -24,6 +24,22 @@ module.exports = (sequelize, DataTypes) => {
 			},
 		},
 
+		catagory: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			validate: {
+				notEmpty: true,
+			},
+		},
+
+		language: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			validate: {
+				notEmpty: true,
+			},
+		},
+
 		description: {
 			type: DataTypes.STRING,
 		},

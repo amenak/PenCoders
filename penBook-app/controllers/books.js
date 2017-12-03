@@ -29,7 +29,9 @@ router.post('/',
 			slug: getSlug(req.body.title.toLowerCase()),
 			title: req.body.title.toLowerCase(),
 			genre: req.body.genre,
-			description: req.body.description,
+      description: req.body.description,
+      catagory: req.body.catagory,
+      language: req.body.language,
 		}).then((book)=>{
 			res.redirect(`/books/${req.user.username}/${book.slug}`);
 		}).catch(() => {

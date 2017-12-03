@@ -9,13 +9,13 @@
         {{/if}}
         {{#each allBooks}}
           <div class="post-preview">
-              <a href="/books/{{this.user.username}}/{{this.slug}}">
+              <a href="/books/{{this.User.username}}/{{this.slug}}">
                   <h2 class="post-title">
                       {{this.title}} 
                   </h2>
                    <span class="subheading">{{this.genre}}</span>
               </a>
-              <p class="post-meta">Posted by <a href="/User/{{this.user.username}}">{{this.user.username}}</a></p>
+              <p class="post-meta">Posted by <a href="/User/{{this.User.username}}">{{this.User.username}}</a></p>
           </div>
           <hr>
         {{/each}}

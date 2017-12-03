@@ -40,7 +40,6 @@ router.post('/',
 			models.Chapters.create({
 				slug: getSlug(draft.title),
 				title: draft.title,
-				genre: draft.genre,
 				text: draft.text,
 				BookId: req.body.book,
 			}).then((chapter) => {
