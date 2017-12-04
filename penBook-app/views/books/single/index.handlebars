@@ -4,8 +4,9 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-heading">
           <h1>{{book.title}}</h1>
-          <hr class="small">
+          <br/>
           <span class="subheading">By: {{user.username}}</span>
+          <hr class="small">
         </div>
       </div>
     </div>
@@ -19,11 +20,11 @@
       <p> Description: <em>{{book.description}}</em></p>
         {{#if isAuthor }}
           <div class="create-book">
-            <a class="btn btn-default" href="/books/{{user.username}}/{{book.slug}}/edit">Edit</a> 
+            <a class="btn btn-warning" href="/books/{{user.username}}/{{book.slug}}/edit">Edit</a> 
           </div>
           <br/>
           <div class="add-chapters">
-            <a class="btn btn-default" href="/drafts">Add Chapters </a>
+            <a class="btn btn-primary" href="/drafts">Add Chapters </a>
           </div>
       {{/if}}
       {{#if chapters}}
