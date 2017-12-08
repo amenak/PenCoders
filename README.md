@@ -1,7 +1,7 @@
 # PenBook
 This application offers a platform for writing, publishing and reading books. Create a connection between authors, editors, publishers and readers.
 
-According to Joseph Epstein, 81% of Americans want to write a book. However, the odds to publish a book is smaller. Having a platform which bring writers, editors and publishers together will surely increase the odds. Having the exact audience to your disposal will ensure the succes of the book.
+According to Joseph Epstein, 81% of Americans want to write a book. However, the odds to publish a book is smaller. Having a platform which bring writers, editors and publishers together will surely increase the odds. Having the exact audience to your disposal will ensure the success of the book.
 
 A similar applications available now is Webook.com, it offers a community for writers and editors with a little chance of communication with a literary agent when the books is done.
 

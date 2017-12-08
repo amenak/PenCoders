@@ -2,7 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 router.use('/', require('./home'));
-router.use('/', require('./post'));
+router.use('/login', require('./login'));
+router.use('/logout', require('./logout'));
+router.use('/profile', require('./profile'));
+router.use('/sign-up', require('./sign-up'));
+router.use('/drafts', require('./drafts.js'));
 
 
 module.exports = router;

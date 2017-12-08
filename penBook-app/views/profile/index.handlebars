@@ -1,11 +1,40 @@
-<div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-heading">
-          <h1>{{user.username}}</h1>
-          <hr class="small">
-          <span class="subheading">{{user.firstName}} {{user.lastName}}</span>
+<div id="name" class="name">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="page-heading">
+           <hr class="small">
+            <span class="subheading">{{user.firstName}} {{user.lastName}}</span>
+          </div>
         </div>
       </div>
     </div>
+</div>
+
+<div id="sidebar" class="sidebar">
+<link href="/css/HomeStyle.css" rel="stylesheet">
+  <div class="container-fluid">
+    <div class="row profile">
+      <div class="col-md-3">
+        <div class="profile-sidebar">
+          <div class="profile-user-pic"> 
+            <img src="/img/profile2.png" alt="" class="imgr-responsive img-circle">
+          </div>
+          <div class="profile-user-title">
+            <div class="profile-user-name">
+            <h1>{{user.username}}<h1>
+            </div>
+            <div class="profile-user-about me">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi tellus, iaculis vestibulum dapibus ac, condimentum eget orci. Suspendisse hendrerit nulla et nisi cursus, vitae imperdiet turpis sollicitudin. Vestibulum tristique porta mi ut maximus. Orci varius<p>
+            </div>
+            <div class="profile-user-buttons">
+              <button class="btn btn-success btn-small">Drafts</button>
+              <button class="btn btn-success btn-small">My Library</button>
+            </div>
+
+          </div>
+        </div> 
+      </div>
+    </div>
   </div>
+</div>
