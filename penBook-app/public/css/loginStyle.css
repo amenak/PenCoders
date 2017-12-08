@@ -13,10 +13,10 @@ body{
 
 .loginBox
 {
-	position: static;
-	top: 20%;
-	left: 100%;
-	width: 350px;
+	position: relative;
+	top: 25%;
+	left: 25%;
+	width: 50%;
 	box-sizing: border-box;
 	padding: 40px 40px;
 	background-color: #FDFDFE;
