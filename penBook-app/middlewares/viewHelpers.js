@@ -8,5 +8,9 @@ helpers.register = () => {
   }
 };
 
+helpers.isAuthor = (curUser, Author) => {
+	return curUser.username == Author.username;
+};
+
 module.exports = helpers;
 
