@@ -96,46 +96,4 @@
     width: 40%;
 }
 
-.footer 
-{
-	padding: 30px;
-	color: black;
-	background-color: #DFDCE3;
 
-}
-
-.footer p 
-{
-	padding: 5px;	
-}
-
-/*Profile*/
-
-.profile{
-	margin: 20px 0;
-}
-
-.profile-sidebar{
-	padding:20px 0 10px 0;
-	background: #fff;
-}
-
-.profile-user-pic{
-	float: none;
-	margin: 0 auto;
-	width: 50%;
-	height: 50%;
-}
-
-.profile-user-title{
-	text-align: center;
-	margin-top: 20px;
-}
-
-.profile-user-name{
-	color: #5a73a1;
-	font-size: 10px;
-	font-weight: 600;
-	margin-bottom: 7px;
-
-}
