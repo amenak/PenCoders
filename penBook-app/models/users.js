@@ -51,6 +51,7 @@ module.exports = (sequelize, DataTypes) => {
   Users.associate = (models) => {
     models.Users.hasMany(models.DraftChapters);
     models.Users.hasMany(models.Books);
+    models.Users.hasMany(models.Comments);
   }
 
 	Users.beforeCreate((user) =>

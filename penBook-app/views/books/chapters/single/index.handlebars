@@ -15,6 +15,28 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
       <p> <em>{{chapter.text}}</em></p>
+    </div>
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      {{#each comments}}
+        <label> {{this.User.username}} </label> <span> <em> {{this.updatedAt}}</em> </span>
+        <p> <em> {{this.text}} </em> </p>
+      {{/each}}
+    </div>
+      <form name="create-comments" action="/books/{{user.username}}/{{book.slug}}/{{chapter.slug}}" method="post">
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <label>Comments</label>
+            <textarea type="text" class="form-control" placeholder="Text" name="text" required data-validation-required-message="Please enter a body."></textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="form-group col-xs-12 text-center col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <button type="submit" class="btn btn-success">Post</button>
+          </div>
+        </div>
+      </form>
       <ul class="pager">
           <li class="next">
             <a href="/books/{{user.username}}/{{book.slug}}">All Chapters &larr;</a>

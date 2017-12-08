@@ -30,6 +30,7 @@ module.exports = (sequelize, DataTypes) => {
 
 	Chapters.associate = (models) => {
 		models.Chapters.belongsTo(models.Books);
+		models.Chapters.hasMany(models.Comments);
 	}
 
 	return Chapters;

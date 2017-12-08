@@ -11,9 +11,19 @@
 
 }
 
+.navbar {
+	position: fixed;
+	top: 0px;
+	width: 98%;
+	z-index: 9999;
+}
+
+
 .body {
+	position: relative;
+	top: 60px;
 	width: 100%;
-	min-height: 380px;
+	min-height: 450px;
 }
 
 .footer 
