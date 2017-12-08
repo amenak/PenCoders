@@ -37,7 +37,37 @@ router.post('/',
 		}).catch(() => {
 			res.render('books/new');
 		});
-	});
+  });
+  
+router.post('/comments',
+  passport.redirectIfNotLoggedIn('/login'),
+  (req, res) => {
+    models.Chapters.findOne({
+      where: {
+        id: req.body.chapter,
+      },
+      include: [{
+				model: models.Users,
+				where: {
+					username: req.user.username,
+				},
+			}],
+    }).then((chapter) => {
+      models.Comments.create({
+        slug: getSlug(chapter.title),
+        bookSlug: getSlug(book.title),
+        title: req.body.title,
+        ChapterId: chapter.id,
+        text: req.body.text,
+        user: req.user.username,
+      }).then((comment) => {
+        res.redirect(`/books/${req.user.username}/${comment.bookSlug}/${comment.slug}`);
+      })
+    }).catch(() => {
+        res.render('books/new');
+    });
+  });
+   
 
 router.get('/:username/:slug', 
   passport.redirectIfNotLoggedIn('/login'), 
@@ -116,7 +146,7 @@ router.get('/:username/:slug/:slugChapters',
 			where: {
 				slug: req.params.slugChapters,
 			},
-			include: {
+			include: [{
 				model: models.Books,
 				where: {
 					slug: req.params.slug,
@@ -127,9 +157,12 @@ router.get('/:username/:slug/:slugChapters',
 						username: req.params.username,
 					},
 				},
-			},
+      },
+      {
+        model: models.Comments,
+      }],
 		}).then((chapter) => {
-			(chapter ? res.render('books/chapters/single', { chapter, user: chapter.Book.User, book: chapter.Book }) : res.redirect(`/books/${req.params.username}/${req.params.slug}`));
+			(chapter ? res.render('books/chapters/single', { chapter, user: chapter.Book.User, book: chapter.Book, comments: chapter.Comments}) : res.redirect(`/books/${req.params.username}/${req.params.slug}`));
 		})
 });
 
