@@ -9,6 +9,7 @@ router.use('/sign-up', require('./sign-up'));
 router.use('/drafts', require('./drafts.js'));
 router.use('/books', require('./books.js'));
 router.use('/publish', require('./publish.js'));
+router.use('/about-us', require('./about-us.js'));
 
 
 module.exports = router;

@@ -1,5 +1,4 @@
 
-
 html {
   height: 100%;
   box-sizing: border-box;
@@ -17,6 +16,7 @@ body {
   min-height: 100%;
 }
 
+
 #login-nav input { margin-bottom: 15px; }
 #myNavbar {
 	background-color: #DFDCE3;
@@ -26,7 +26,6 @@ body {
 	font-weight:bold;
 	font-size:20px;
 	color: white;
-
 }
 
 .navbar {
