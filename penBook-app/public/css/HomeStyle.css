@@ -35,6 +35,7 @@
 	background-size: cover;
 	background-position: center;
 	color: #fff;
+	font-family: "Lucida Console", Monaco, monospace;
 }
 
 .header img 
@@ -58,15 +59,18 @@
 {
 	padding: 80px 0 80px;
 	text-align: center;
+	font-family: "Lucida Console", Monaco, monospace;
 }
 
 .Popular h2
 {	
-	font-size: 40px; 
+	font-size: 40px;
 	font-weight: 700;
 	color: #79635e;
 	margin: 20px 0px 30px;
+	background: #e68a00;
 }
+
 .Popular h4
 {
 	color: black;
@@ -78,6 +82,11 @@
 	color: black;
 	font-size: 14px;
 	padding-bottom: 40px;
+}
+
+#Book-List
+{
+	background: #cccccc;
 }
 
 .Popular img 
