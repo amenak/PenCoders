@@ -13,15 +13,9 @@ body{
 
 .sign-upBox
 {
-	position: static;
-	top:20%;
-	left: 50%;
-	width: 350px;
 	box-sizing: border-box;
-	padding: 0px 40px;
+	padding: 20px 40px;
 	background-color: #FDFDFE;
-
-
 }
 
 
