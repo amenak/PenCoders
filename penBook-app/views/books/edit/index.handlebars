@@ -1,4 +1,7 @@
-<div class="container">
+
+<link href="/css/BookStyle.css" rel="stylesheet">
+
+<div id="BookStyle" class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <form name="edit-book" method="POST" action="/books/{{book.User.username}}/{{book.slug}}?_method=PUT">
@@ -12,7 +15,7 @@
         <div class="row control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <label>Description</label>
-            <textarea type="text" class="form-control" name="description" value="{{book.description}}" required data-validation-required-message="Please enter a text."></textarea>
+            <textarea type="text" class="form-control" name="description" required data-validation-required-message="Please enter a text."> {{book.description}} </textarea>
             <p class="help-block text-danger"></p>
           </div>
         </div>
