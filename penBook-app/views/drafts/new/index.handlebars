@@ -1,4 +1,5 @@
 <link href="/css/DraftStyle.css" rel="stylesheet">
+
 <div id="draft" class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -20,14 +21,14 @@
         <div class="row control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <label>Text</label>
-            <textarea type="text" class="form-control" placeholder="Text" name="text" required data-validation-required-message="Please enter a body."></textarea>
+            <textarea id="txtEditor" type="text" class="form-control" required data-validation-required-message="Please enter a body."></textarea>
             <p class="help-block text-danger"></p>
           </div>
         </div>
         <br>
         <div class="row">
           <div class="form-group col-xs-12 text-center">
-              <button type="submit" class="btn btn-success">Save</button>
+              <button type="submit" class="btn btn-success btn-lg">Save</button>
           </div>
         </div>
       </form>
