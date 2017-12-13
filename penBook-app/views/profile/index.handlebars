@@ -1,16 +1,3 @@
-<div id="name" class="name">
-  <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <div class="page-heading">
-           <hr class="small">
-            <span class="subheading">{{user.firstName}} {{user.lastName}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
 <div id="sidebar" class="sidebar">
 <link href="/css/profileStyle.css" rel="stylesheet">
   <div class="container-fluid">
@@ -22,19 +9,25 @@
           </div>
           <div class="profile-user-title">
             <div class="profile-user-name">
-            <h1>{{user.username}}<h1>
+            <h3>{{user.username}}<h3>
             </div>
             <div class="profile-user-about me">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi tellus, iaculis vestibulum dapibus ac, condimentum eget orci. Suspendisse hendrerit nulla et nisi cursus, vitae imperdiet turpis sollicitudin. Vestibulum tristique porta mi ut maximus. Orci varius<p>
+              <p>Hi, I love to write non-fiction. I can help you out with your stories. I am currently working as a freelance marketing writer and I am always interested in a challenge. Reach out to me to connect!<p>
             </div>
             <div class="profile-user-buttons">
-              <button class="btn btn-success btn-small">Drafts</button>
-              <button class="btn btn-success btn-small">My Library</button>
+              <a href="http://localhost:8000/drafts"><button class="btn btn-success btn-lg">Drafts</button></a>
+              <a href="http://localhost:8000/books"><button class="btn btn-success btn-lg">My Library</button></a>
             </div>
 
           </div>
         </div> 
-      </div>
+       </div>
+
+       <div class="col-md-3">
+       <h1> Hi {{user.firstName}}!</h1>
+       </div>
+
+
     </div>
   </div>
 </div>
