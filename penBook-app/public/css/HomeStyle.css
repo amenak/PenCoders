@@ -20,22 +20,26 @@
 {
 	font-size: 40px;
 	font-weight: 700;
-	color: #79635e;
+	/*color: #79635e;*/
+	color: #FFC36D;
 }
 
-
+.header p
+{
+	font-weight: bold;
+}
 .header
 {
 	height: 400px;
 	width: 100%;
-	padding: 30px 0 30px;
-	background-color: #4ABDAC;
-	background-image: url(../img/headerBg2.jpg);
+	/*background-color: #4ABDAC;*/
+	/*background-color: #353839;*/ 
+	background-image: url(../img/stars.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	color: #fff;
-	font-family: "Lucida Console", Monaco, monospace;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .header img 
@@ -57,35 +61,44 @@
 
 .Popular
 {
-	padding: 80px 0 80px;
+	padding: 40px 0 0px;
 	text-align: center;
-	font-family: "Lucida Console", Monaco, monospace;
+	font-family: 'Open Sans', sans-serif;
+
 }
 
 .Popular h2
 {	
-	font-size: 40px;
+	/*font-size: 40px;
 	color: #79635e;
 	margin: 20px 0px 30px;
-	background: #e68a00;
+	background: #e68a00;*/
+	font-size: 40px;
+	font-weight: 700;
+	/*color: #79635e;*/
+	color: #FFC36D;
+	padding-bottom: 40px;
+
 }
 
 .Popular h4
 {
-	color: black;
+	color: white;
 	margin: 20px 0px 20px;
+	font-weight: bold;
 }
 
 .Popular p
 {
-	color: black;
+	color: white;
 	font-size: 14px;
 	padding-bottom: 40px;
 }
 
 #Book-List
 {
-	background: #cccccc;
+	/*background: #cccccc;*/
+	background: rgba(0,0,0,.4); 
 }
 
 .Popular img 
@@ -93,6 +106,18 @@
 	display: block;
     margin: auto;
     width: 40%;
+}
+
+#NewNovel
+{
+	background: transparent; 
+}
+
+#headBg
+{
+	/*background-image: url(../img/stars.jpg);*/
+	padding: 40px 10px 30px 40px;
+
 }
 
 
