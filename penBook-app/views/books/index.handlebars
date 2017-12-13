@@ -1,0 +1,26 @@
+<link href="/css/BookStyle.css" rel="stylesheet">
+
+<div id="book-style" class="container">
+  <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <h1>All Books</h1>
+        {{#if cur_user}}
+        <div class="create-books">
+          <a class="btn btn-primary" href="/books/new">Create a new book</a>
+        </div>
+        {{/if}}
+        {{#each allBooks}}
+          <div class="book-preview">
+              <a href="/books/{{this.User.username}}/{{this.slug}}">
+                  <h2 class="book-title">
+                      {{this.title}} 
+                  </h2>
+              </a>
+              <p class="subheading">Genre: <em>{{this.genre}}</em></p>
+              <p class="subheading">Author: <em> {{this.User.username}}</em></p>
+          </div>
+          <hr>
+        {{/each}}
+      </div>
+  </div>
+</div>

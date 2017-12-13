@@ -1,0 +1,70 @@
+.section
+{
+	background-color: #4ABDAC;
+	height: 300px;
+}
+
+.box
+{
+	margin: auto; 
+	width: 50%;
+	height: 200px;
+	top: 50%;
+	left: 50%;
+	background-color: orange; 
+}
+
+.header h1
+{
+	font-size: 40px;
+	font-weight: 700;
+	color: black;
+	background: #e68a00;
+	font-family: "Lucida Console", Monaco, monospace;
+
+}
+
+.header
+{
+	text-align: center;
+	background: #e68a00;
+	color: black;
+	font-size: 14px;
+	font-family: "Lucida Console", Monaco, monospace;
+
+}
+
+.why
+{
+	text-align: center;
+	background-color: #cccccc;
+	font-family: "Lucida Console", Monaco, monospace;
+	color: black;
+	font-size: 14px;
+}
+
+.who
+{
+	text-align: center;
+	background-color: #cccccc;
+	color: black;
+	font-size: 14px;
+	font-family: "Lucida Console", Monaco, monospace;
+}
+
+.group
+{
+	text-align: center;
+	background-color: #cccccc;
+	color:black;
+	font-size: 14px;
+	font-family: "Lucida Console", Monaco, monospace;
+	padding-bottom: 25px;
+}
+.group img
+{
+	display: block;
+    margin: auto;
+    width: 50%;
+    height: 40%;
+}

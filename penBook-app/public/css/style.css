@@ -1,4 +1,22 @@
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+}
+
+
 #login-nav input { margin-bottom: 15px; }
 #myNavbar {
 	background-color: #DFDCE3;
@@ -8,6 +26,61 @@
 	font-weight:bold;
 	font-size:20px;
 	color: white;
+}
+
+.navbar {
+	position: fixed;
+	top: 0px;
+	width: 98%;
+	z-index: 9999;
+}
+
+
+.body {
+	position: relative;
+	top: 60px;
+	width: 100%;
+	min-height: 450px;
+}
+
+.footer 
+{
+	width: 100%;
+	margin-top:50px;
+	padding: 0px 10px;
+	color: black;
+	background-color: #DFDCE3;
+	background-size: 100%;
+	position: relative;
+	bottom: 0;
+}
+
+.footer p 
+{
+	padding: 2px;	
+}
+
+@media(min-height: 720px){
+	.body {
+		min-height: 525px;
+	}
+}
+
+@media(min-height: 768px){
+	.body {
+		min-height: 570px;
+	}
 
 }
 
+@media(min-height: 1024px){
+	.body{
+		min-height: 830px;
+	}
+}
+
+@media(min-height: 1280px) {
+	.body {
+		min-height: 1170px;
+	}
+}

@@ -1,0 +1,32 @@
+<div class="container">
+  <link href="/css/publishStyle.css" rel="stylesheet">
+  <div class="row">
+    <div class="panel-body">
+          <div class="col-lg-6 col-lg-offset-6 publishBox text-center">
+            <h2> Publish your new chapter</h2>
+            <hr/>
+            <form id="publish-form" action="/publish" method="post" role="form">
+              <div id="select-book">
+                <label>Book</label>
+                <select class="choose-book" name = "book" id = "book">
+                {{#each allBooks}}
+                <option value = "{{this.id}}" class="text-capitalize"> {{this.title}} </option>
+                {{/each}}
+                </select>
+                <br/>
+                <a href="/books/new" tabindex="5" class="bookNotYetCreated">The book is not created yet?</a>
+              </div>
+              <div id="select-draft">
+                <label>Draft</label>
+                <select class="choose-draft" name = "draft" id="draft">
+                {{#each allDrafts}}
+                <option value = "{{this.id}}"> {{this.title}} </option>
+                {{/each}}
+                </select>
+                </div>
+                <button type="submit" name="publish-submit" id="publish-submit" tabindex="4" class="form-control btn btn-success text-center"> Publish </button>
+            </form>     
+          </div>
+        </div>
+      </div>
+</div>

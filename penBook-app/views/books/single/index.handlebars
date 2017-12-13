@@ -1,0 +1,57 @@
+<link href="/css/BookStyle.css" rel="stylesheet">
+
+<header id="book-style" class="intro-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-heading">
+          <h1>{{book.title}}</h1>
+          <br/>
+          <span class="subheading">By: {{user.username}}</span>
+          <hr class="small">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="book-style" class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <p> Genre: <em>{{book.genre}}</em></p>
+      <p> Description: <em>{{book.description}}</em></p>
+      <hr/>
+        {{#if isAuthor }}
+          <div class="create-book">
+            <a class="btn btn-warning" href="/books/{{user.username}}/{{book.slug}}/edit">Edit</a> 
+          </div>
+          <br/>
+          <div class="add-chapters">
+            <a class="btn btn-primary" href="/drafts">Add Chapters </a>
+          </div>
+          <hr/>
+      {{/if}}
+      {{#if chapters}}
+       {{#each chapters}}
+          <div class="chapter-preview">
+              <a href="/books/{{../user.username}}/{{../book.slug}}/{{this.slug}}">
+                  <h2 class="chapter-title">
+                     Chapter {{@index}}: {{this.title}} 
+                  </h2>
+              </a>
+          </div>
+          <hr>
+        {{/each}}
+      {{else}}
+        <div class="chapter-alert">
+          <p><em>Chapter One is coming soon!!!</em></p>
+        </div>
+      {{/if}}
+      <ul class="pager">
+          <li class="next">
+            <a href="/books">All books &larr;</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>

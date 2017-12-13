@@ -11,23 +11,23 @@ body{
 
 }
 
-.loginBox
+.sign-upBox
 {
 	box-sizing: border-box;
-	padding: 40px 40px;
+	padding: 20px 40px;
 	background-color: #FDFDFE;
 }
 
 
 h2
 {
-	margin: 20px;
+	margin: 10px;
 	color: #595A5B;
 	text-align: center;
 	font-weight: bold;
 }
 
-.loginBox label
+.sign-upBox label
 {
 	margin: 0;
 	padding: 10px 0px;
@@ -35,28 +35,19 @@ h2
 	color: #2F2F2F;
 }
 
-.loginBox input 
+.sign-upBox input 
 {
 	width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 }
 
-.loginBox input[type="text"],
-.loginBox input[type="password"]
+.sign-upBox input[type="text"],
+.sign-upBox input[type="password"]
 {
 	height: 40px;
 }
 
-.loginBox input[type="checkbox"]
-{
-	width: 5%;
-	margin-top: 10px;
-	margin-bottom: 0px;
-	padding: 10px;
-	display: inline;
-}
-
-.loginBox button 
+.sign-upBox button 
 {
 	margin: 20px 10px;
 	border-style: none;
@@ -69,7 +60,7 @@ h2
 }
 
 
-.loginBox button:hover {
+.sign-upBox button:hover {
  	border-style: outset;
  	border: 20px;
  	background-color: #00BFFF;

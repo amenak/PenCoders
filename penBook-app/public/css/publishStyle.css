@@ -1,0 +1,44 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(gray, lightblue); 
+	background: -webkit-linear-gradient(gray, lightblue);
+	background: -moz-linear-gradient(gray, lightblue);
+	background: -o-linear-gradient(gray, lightblue);
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size: cover;
+	font-family: sans-serif; 
+}
+.publishBox {
+	position: relative;
+	left: 25%;
+	margin: auto auto;
+}
+
+.bookNotYetCreated {
+	margin: 50px 20px;
+}
+.publishBox select {
+	margin: 0px 20px;
+	width: 50%;
+}
+
+.publishBox label {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#publish-submit {
+	margin: 20px auto;
+	padding: auto auto;
+	width: 20%;
+	font-weight: bold;
+
+}
+
+#select-book, #select-draft {
+	margin: 20px 20px;
+	padding: 5px 5px;
+}

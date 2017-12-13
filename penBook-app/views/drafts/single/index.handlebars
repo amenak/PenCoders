@@ -1,27 +1,31 @@
+<link href="/css/DraftStyle.css" rel="stylesheet">
 <header class="intro-header">
-  <div class="container">
+  <div id="draft" class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-heading">
           <h1>{{draft.title}}</h1>
-          <hr class="small">
+          <br/>
           <span class="subheading">By: {{user.username}}</span>
+          <hr class="small">
         </div>
       </div>
     </div>
   </div>
 </header>
 
-<div class="container">
+<div id="draft" class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <div class="create-draft">
-          <a class="btn btn-default" href="/drafts/{{user.username}}/{{draft.slug}}/edit">Edit</a> 
+      <div class="text text-center">
+        <p>{{draft.text}}</p>
       </div>
-      <p>{{draft.body}}</p>
+      <div class="create-draft">
+          <a class="btn btn-warning" href="/drafts/{{user.username}}/{{draft.slug}}/edit">Edit</a> 
+      </div>
       <ul class="pager">
-          <li class="next">
-            <a href="/drafts">All Books &larr;</a>
+          <li class="previous">
+            <a href="/drafts">All Drafts &crarr;</a>
           </li>
       </ul>
     </div>

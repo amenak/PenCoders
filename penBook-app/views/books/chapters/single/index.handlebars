@@ -1,0 +1,62 @@
+<link href="/css/BookStyle.css" rel="stylesheet">
+
+<header id="book-style" class="intro-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-heading">
+          <h1>{{chapter.title}}</h1>
+          <hr class="small">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="chapter-style" class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+      <p> <em>{{chapter.text}}</em></p>
+      <hr/>
+    </div>
+    {{#if comments}}
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <h3> {{comments.length}} Comments </h3>
+      <hr/>
+      {{#each comments}}
+      <div class = "">
+        <label> {{this.User.username}} &emsp;</label>
+        <span ><em>commented on {{this.updatedAt}}</em></span>
+        <br class="small"/>
+        <p> <em> {{this.text}} </em> </p>
+        <hr/>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+      <form name="create-comments" action="/books/{{user.username}}/{{book.slug}}/{{chapter.slug}}" method="post">
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class= "col-lg-11  col-md-8 ">
+              <textarea type="text" class="form-control" placeholder="Leave your comment here..." name="text" required data-validation-required-message="Please enter a comment."></textarea>
+            </div>
+            <div class= "col-lg-1 col-md-3 center text-center">
+              <button type="submit" class="btn btn-success">Post</button>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="form-group col-xs-12 text-center col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <p class="help-block text-danger"></p>
+          </div>
+        </div>
+      </form>
+      <ul class="pager">
+          <li class="next">
+            <a href="/books/{{user.username}}/{{book.slug}}">All Chapters &larr;</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
