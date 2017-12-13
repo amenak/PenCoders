@@ -104,6 +104,11 @@ body {
 	font-weight: bold;
 }
 
+#media 
+{
+	padding: 30px 20px;
+}
+
 @media(min-height: 720px){
 	.body {
 		min-height: 525px;
