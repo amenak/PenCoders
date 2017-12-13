@@ -1,7 +1,7 @@
 body
 {
 	margin: 0;
-	padding: 0;
+	padding: 10px;
 	background: linear-gradient(gray, lightblue); 
 	background: -webkit-linear-gradient(gray, lightblue);
 	background: -moz-linear-gradient(gray, lightblue);
@@ -15,6 +15,7 @@ body
 
 #book-style
 {
+	/*color: #FFC36D;*/
 	color: black;
 }
 

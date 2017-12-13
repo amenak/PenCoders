@@ -9,6 +9,9 @@
     <!-- Bootstrap Js CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
+    <link href="/css/editor.css" type="text/css" rel="stylesheet"/>
   </head>
   <body> 
   <div class="container-fluid">
@@ -22,7 +25,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="/">Pen Book</a>
+               <a class="navbar-brand" href="/"><em>PenBook</em></a>
             </div>
              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
@@ -60,7 +63,7 @@
 	         {{{ body }}}
     </div>
 
-
+  <!--
   <div id="footer" class="footer">
     <div class="row"> 
       <div class="col-lg-4 col-md-4">
@@ -83,7 +86,9 @@
       </div>
     </div>
   </div>
-</div>
+  -->
+  </div>
+
 
 
   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -96,6 +101,22 @@
     });
 });
   </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="/css/editor.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#txtEditor").Editor();
+      });
+    </script>
+
+     <script>
+      $(document).ready(function() {
+        $("#txtEditor").Editor("getText");
+      });
+    </script>
+
+
   
  {{#if cur_user}}
   <script>

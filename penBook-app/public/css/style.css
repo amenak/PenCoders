@@ -2,6 +2,7 @@
 html {
   height: 100%;
   box-sizing: border-box;
+
 }
 
 *,
@@ -14,19 +15,43 @@ body {
   position: relative;
   margin: 0;
   min-height: 100%;
+  background: url(/img/headerBg2.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size: cover;
+	font-family: 'Open Sans', sans-serif; 
 }
+
+
 
 
 #login-nav input { margin-bottom: 15px; }
 #myNavbar {
-	background-color: #DFDCE3;
+	/*background-color: #DFDCE3;*/
+	background-color: black;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+	color: pink;
+	background-color: transparent;
 }
 
 .navbar-brand {
 	font-weight:bold;
 	font-size:20px;
-	color: white;
+	color: orange;
 }
+
+.navbar-default .navbar-nav > li > a {
+	color: white;
+	font-size: large;
+}
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+	color: orange;
+	background-color: transparent;
+}
+
 
 .navbar {
 	position: fixed;
@@ -35,6 +60,16 @@ body {
 	z-index: 9999;
 }
 
+.navbar-default .navbar-brand {
+	color: orange;
+	font-size: xx-large;
+}
+
+.navbar-form .form-group {
+	display: inline-block;
+	margin-bottom: 0;
+	vertical-align: -moz-middle-with-baseline;
+}
 
 .body {
 	position: relative;
@@ -49,7 +84,7 @@ body {
 	margin-top:50px;
 	padding: 0px 10px;
 	color: black;
-	background-color: #DFDCE3;
+	background-color: black;
 	background-size: 100%;
 	position: relative;
 	bottom: 0;
@@ -57,7 +92,21 @@ body {
 
 .footer p 
 {
-	padding: 2px;	
+	padding: 2px;
+	color: white;	
+	font-size: medium;
+}
+
+.footer h4 
+{
+	font-size: large;
+	color:white;
+	font-weight: bold;
+}
+
+#media 
+{
+	padding: 30px 20px;
 }
 
 @media(min-height: 720px){
