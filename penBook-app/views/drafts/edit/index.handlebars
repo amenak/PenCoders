@@ -13,7 +13,8 @@
         <div class="row control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <label>Text</label>
-            <input id="txtEditorr" type="text" class="form-control" name="text" value="{{draft.text}}" required data-validation-required-message="Please enter a text.">
+
+            <textarea id="txtEditorr" type="text" class="form-control" name="text" required data-validation-required-message="Please enter a text."> {{draft.text}} </textarea>
             <p class="help-block text-danger"></p>
           </div>
         </div>
