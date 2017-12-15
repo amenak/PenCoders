@@ -19,43 +19,38 @@
 	font-size: 40px;
 	font-weight: 700;
 	color: black;
-	background: #e68a00;
-	font-family: "Lucida Console", Monaco, monospace;
 
 }
 
 .header
 {
 	text-align: center;
-	background: #e68a00;
+	background: #f0b866;
 	color: black;
 	font-size: 14px;
-	font-family: "Lucida Console", Monaco, monospace;
 
+}
+
+.what {
+	color: black;
+	font-size: 14px;
 }
 
 .why
 {
-	text-align: center;
-	background-color: #cccccc;
-	font-family: "Lucida Console", Monaco, monospace;
 	color: black;
 	font-size: 14px;
 }
 
 .who
 {
-	text-align: center;
-	background-color: #cccccc;
 	color: black;
 	font-size: 14px;
-	font-family: "Lucida Console", Monaco, monospace;
 }
 
 .group
 {
 	text-align: center;
-	background-color: #cccccc;
 	color:black;
 	font-size: 14px;
 	font-family: "Lucida Console", Monaco, monospace;
@@ -66,5 +61,6 @@
 	display: block;
     margin: auto;
     width: 50%;
-    height: 40%;
+    height: 150px;
+    border-radius:100%;
 }
